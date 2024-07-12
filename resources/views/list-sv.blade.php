@@ -26,6 +26,12 @@
                     <td>{{$key['tuoi']}}</td>
                     <td>{{$key['mssv']}}</td>
                     <td>{{$key['email']}}</td>
+                    <td>
+                        <a href="#">Xoa</a>
+                    </td>
+                    <td>
+                        <a href="#">Sua</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
