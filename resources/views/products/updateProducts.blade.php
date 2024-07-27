@@ -10,6 +10,7 @@
 <body>
     <h2 class="text-center">Sửa sản phẩm</h2>
     <form action="{{ route('products.updatePostProducts') }}" method="POST">
+        <input name="productId" type="hidden" value="{{ $product->id }}">
         @csrf
         <div class="mb-6">
             <label for="name" class="form-label">Tên sản phẩm</label><br>
