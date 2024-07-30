@@ -6,6 +6,7 @@ use App\Http\Controllers\TinController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SPController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,9 +105,25 @@ use App\Http\Controllers\Admin\ProductController;
 //     ->name('updatePostProducts');
 // });
 
+Route::get('login', [AuthController::class, 'login'])
+        ->name('login');
+
+Route::post('login', [AuthController::class, 'postLogin'])
+        ->name('postLogin');
+
+Route::get('logout', [AuthController::class, 'logout'])
+        ->name('logout');
+
+Route::get('register', [AuthController::class, 'register'])
+        ->name('register');
+
+Route::post('register', [AuthController::class, 'postRegister'])
+        ->name('postRegister');
+
 Route::group([
     'prefix' => 'admin',
-    'as' => 'admin.'
+    'as' => 'admin.',
+    'middleware' => 'checkAdmin'
 ], function () {
 
     Route::group([
@@ -132,3 +149,4 @@ Route::group([
         ->name('updatePostProduct');
     });
 });
+

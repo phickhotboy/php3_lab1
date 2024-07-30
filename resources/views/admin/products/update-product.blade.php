@@ -28,9 +28,10 @@ Chinh sua sản phẩm
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Image</label>
+            <input type="file" class="form-control" name="imageSP" id="imageSP">
             <img src="{{asset($product->image)}}" alt="" style="width:50px">
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Them moi</button>
+        <button type="submit" class="btn btn-primary mt-3">Sua</button>
     </form>
 </div>
     
